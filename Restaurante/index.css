@@ -1,4 +1,15 @@
+/* Seleciona o elemento raiz e o corpo do documento */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* É boa prática também definir a altura a 100% para evitar problemas de altura */
+    height: 100%;
+}
+/* removemos assim qualquer margemou padding já existentes */
+
+
 .nav{
-    width: 80vw;
-    margin: 0vw 20vw 0vw 0vw;
+    width: 95vw;
+    margin: 2vh 2vw 2vh 2vw;
+    background-color:pink;
 }
