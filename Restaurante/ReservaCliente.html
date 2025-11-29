@@ -1,88 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>eatEasy-Reservas</title>
+    <title>eatEasy - Reservas</title>
 </head>
 <body>
-<header>
-    <!-- navbar do website !-->
-    <nav>
-        <div>
-            <a href="index.html"> <img src="Logo/eatEasy.png" height="32" width="149" alt="logo"/></a>
-        </div>
 
-        <ul id="menu-navegacao">
+<header>
+    <nav>
+        <a href="index.html">
+            <img src="Logo/eatEasy.png" height="32" width="149" alt="eatEasy Logo"/>
+        </a>
+
+        <form action="#">
+            <input type="search" placeholder="Pesquisar restaurantes...">
+            <button type="submit">🔍</button>
+        </form>
+
+        <ul>
             <li><a href="contactos.html">Contactos</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.html">Login 👤</a></li>
             <li><a href="registar.html">Registar</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <article id="restaurante1">
-        <div>
-            <p>Restaurante 1</p>
-        </div>
-        <div>
-            <p>Localização</p>
-            <p>Tipo de comida</p>
-            <p>Preço médio</p>
-        </div>
+    <hr> <section id="lista-restaurantes"> <!-- hr - Human Resources - funciona com ponte entre a empresa e os seus funcionarios -->
+    <article>
+        <h3>Restaurante 1</h3>
+        <ul>
+            <li>Localização: Lisboa</li>
+            <li>Tipo: Italiano</li>
+            <li>Preço médio: 20€</li>
+        </ul>
     </article>
-
-    <article id="restaurante2">
-        <div>
-            <p>Restaurante 1</p>
-        </div>
-        <div>
-            <p>Localização</p>
-            <p>Tipo de comida</p>
-            <p>Preço médio</p>
-        </div>
+    <hr>
+    <article>
+        <h3>Restaurante 2 (Selecionado)</h3>
+        <ul>
+            <li>Localização: Porto</li>
+            <li>Tipo: Mexicana</li>
+            <li>Preço médio: 14€</li>
+        </ul>
     </article>
-
-    <article id="restaurante3">
-        <div>
-            <p>Restaurante 1</p>
-        </div>
-        <div>
-            <p>Localização</p>
-            <p>Tipo de comida</p>
-            <p>Preço médio</p>
-        </div>
+    <hr>
+    <article>
+        <h3>Restaurante 3</h3>
+        <ul>
+            <li>Localização: Algarve</li>
+            <li>Tipo: Marisco</li>
+            <li>Preço médio: 30€</li>
+        </ul>
     </article>
+</section>
 
-    <article id="restaurante4">
-        <div>
-            <p>Restaurante 1</p>
-        </div>
-        <div>
-            <p>Localização</p>
-            <p>Tipo de comida</p>
-            <p>Preço médio</p>
-        </div>
-    </article>
+    <hr> <section id="detalhes-restaurante">
+    <h1>Nome "Restaurante 2"</h1>
+    <p>Mexicana | Preço médio 14€ | Avaliações ★★★★★</p>
 
-    <article id="reserva">
-        <div>
-            <h3>Faz a tua reserva</h3>
-        </div>
+    <div style="background-color: #eee; height: 150px; border: 1px solid black; text-align: center; padding-top: 50px;">
+        <p>[Mapa Aqui]</p>
+    </div>
 
-        <div></div>
-    </article>
+    <h3>Fotos</h3>
+    <div style="background-color: #eee; height: 100px; border: 1px solid black; margin-bottom: 5px;">
+        [Foto Principal]
+    </div>
+    <div style="background-color: #eee; height: 80px; border: 1px solid black; display: inline-block; width: 48%;">
+        [Foto 2]
+    </div>
+    <div style="background-color: #eee; height: 80px; border: 1px solid black; display: inline-block; width: 48%;">
+        [Foto 3]
+    </div>
+
+    <h3>Informações</h3>
+    <p><strong>Chef:</strong> Amilcar Junior</p>
+    <p><strong>Opções Alimentares:</strong> Pratos vegetarianos, Sem glúten, Vegan</p>
+</section>
+
+    <hr> <section id="reserva">
+    <div style="border: 1px solid black; padding: 15px;">
+        <h3 style="text-align: center;">Faz a tua reserva</h3>
+
+        <form action="confirmar.html" method="POST">
+
+            <fieldset>
+                <legend>Calendário</legend>
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+                <br><br>
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
+            </fieldset>
+
+            <br>
+
+            <label for="restricoes">Restrições Alimentares:</label><br>
+            <textarea id="restricoes" name="restricoes" rows="4" cols="30" placeholder="Escreve aqui..."></textarea>
+
+            <br><br>
+
+            <button type="submit" style="width: 100%; padding: 10px;">Confirmar Reserva</button>
+        </form>
+    </div>
+</section>
+
 </main>
 
 <footer>
-    <div>
-        <p>Sobre nós</p>
-        <p>Termos de utilização</p>
-    </div>
-
-    <div>
-        <!--icones redes-->
-    </div>
+    <hr>
+    <p>
+        <a href="#">Sobre nós</a> |
+        <a href="#">Termos de utilização</a>
+    </p>
+    <p>Redes Sociais: 📷 Instagram | f Facebook | X Twitter</p>
+    <p>&copy; 2025 eatEasy. Todos os direitos reservados.</p>
 </footer>
 
 </body>
