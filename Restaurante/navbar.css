@@ -6,7 +6,13 @@ html, body {
     height: 100%;/* É boa prática também definir a altura a 100% para evitar problemas de altura */
 }
 
-/* navbar o . é o seletor de classes */
+.navbar-container{
+    width: 100vw; /* Ocupa 100% da largura do viewport */
+    background-color:#ffe2b5; /* Escolha a cor de fundo desejada aqui */
+    /* Você pode adicionar padding aqui para dar altura à barra */
+    padding: 3vh 0; /* Espaçamento vertical (topo/baixo), sem margem lateral */
+}
+
 .nav{
     display:flex;
     align-items:center;/* alinha verticalmente no centro */
@@ -25,19 +31,32 @@ html, body {
 }
 
 .nav-menu{
+    border:1px solid red;
     display:flex;/*fazer com que os filhos li se organizem em linha*/
     list-style: none;/* para remover os pontos atrás dos li */
+    max-width:25vw;
+}
+
+.nav-menu li{
+    /*border:1px solid red;*/
+    /*min-width: 1vw;*/
+    /*max-width:2vw;*/
 }
 
 .nav-menu li a{
     text-decoration: none;/*retira o sublinhado padrão dos links*/
-    color: #333;
-    padding-right:1.5vw;
-    padding-left:1.5vw;
+    color: #491100;
     font-family:"futura-pt", sans-serif;/* fonte a ser usada*/
     font-weight:400;/* 300 em princípio é valor normal*/
     font-style:normal;
     font-size:1em;
-    /*border-top: 2px solid #FF5733;*/
-    /*border-bottom: 2px solid #FF5733;*/
+    /*border:1px solid red;*/
+    margin-right:3vw;
+    margin-left:3vw;
+    transition: transform 0.1s ease;
+
+}
+
+.nav-menu li a:hover{
+    font-weight:500;
 }
