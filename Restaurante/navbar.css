@@ -1,0 +1,43 @@
+/* Seleciona o elemento raiz e o corpo do documento */
+html, body {
+    /* removemos assim qualquer margem ou padding já existentes */
+    margin: 0;
+    padding: 0;
+    height: 100%;/* É boa prática também definir a altura a 100% para evitar problemas de altura */
+}
+
+/* navbar o . é o seletor de classes */
+.nav{
+    display:flex;
+    align-items:center;/* alinha verticalmente no centro */
+    justify-content:space-between;
+    width: 95vw; /* o que vai ocupar do ecrã*/
+    margin: 3vh 2vw 3vh 2vw;/*margem*/
+    /*background-color:pink;*/
+}
+
+.nav-logo-link img{
+    padding-left:1.5vw;
+    height:1.5vw;
+    width:auto;
+    /*border-top: 2px solid #FF5733;*/
+    /*border-bottom: 2px solid #FF5733;*/
+}
+
+.nav-menu{
+    display:flex;/*fazer com que os filhos li se organizem em linha*/
+    list-style: none;/* para remover os pontos atrás dos li */
+}
+
+.nav-menu li a{
+    text-decoration: none;/*retira o sublinhado padrão dos links*/
+    color: #333;
+    padding-right:1.5vw;
+    padding-left:1.5vw;
+    font-family:"futura-pt", sans-serif;/* fonte a ser usada*/
+    font-weight:400;/* 300 em princípio é valor normal*/
+    font-style:normal;
+    font-size:1em;
+    /*border-top: 2px solid #FF5733;*/
+    /*border-bottom: 2px solid #FF5733;*/
+}
