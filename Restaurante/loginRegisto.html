@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>eatEasy - Registar</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div>
+            <a href="index.html"> <img src="Logo/eatEasy.png" height="32" width="149" alt="logo"/></a>
+        </div>
+
+        <ul id="menu-navegacao">
+            <li><a href="contactos.html">Contactos</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="Registo">
+        <div class="logo">eatEasy</div>
+
+        <div class="registo-box">
+            <h1 class="registo-title">Registar Conta</h1>
+            <form action="processar_registo.php" method="POST" class="registo-form">
+
+                <input type="text" name="nome" placeholder="Nome Completo" required class="input-field">
+
+                <input type="email" name="email" placeholder="E-mail" required class="input-field">
+
+                <input type="password" name="password" placeholder="Palavra-Passe" required class="input-field">
+
+                <input type="password" name="password_confirmacao" placeholder="Confirmar Palavra-Passe" required class="input-field">
+
+                <div class="login-link-container">
+                    <a href="login.html" class="login-link">Já tenho conta (Login)</a>
+                </div>
+
+                <div id="botao-registar">
+                    <button type="submit" class="registar">Criar Conta</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer class="login-para-admin">
+    <a href="login-admin.html" class="login-admin">Administrador</a>
+</footer>
+
+</body>
+</html>
