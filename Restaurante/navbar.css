@@ -49,15 +49,10 @@ html, body {
     font-weight:400;/* 300 em princípio é valor normal*/
     font-style:normal;
     font-size:1em;
-    /*border:1px solid red;*/
     margin-right:3vw;
     margin-left:3vw;
-    border-top:1px solid black;
-    border-top-width:0;
-    transition:border-top-width  0.1s ease-in-out;
-    display: inline-block;
 }
 
 .nav-menu li a:hover{
-    border-top-width:1px;
+    color:#78400f;
 }
