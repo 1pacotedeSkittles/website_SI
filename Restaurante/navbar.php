@@ -1,7 +1,7 @@
 <header class="navbar-container">
     <!-- navbar do website !-->
     <nav class="nav">
-        <a href="html_code/index.html" class="nav-logo-link">
+        <a href="index.php" class="nav-logo-link">
             <img src="Logo/eatEasy.png" alt="logo website"/>
         </a>
 
