@@ -10,7 +10,7 @@ html, body {
     width: 100vw; /* Ocupa 100% da largura do viewport */
     background-color:#e0d2b7; /* Escolha a cor de fundo desejada aqui */
     /* Você pode adicionar padding aqui para dar altura à barra */
-    padding: 2vh 0; /* Espaçamento vertical (topo/baixo), sem margem lateral */
+    padding: 0.5vh 0; /* Espaçamento vertical (topo/baixo), sem margem lateral */
 }
 
 .nav{
