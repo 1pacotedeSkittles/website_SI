@@ -12,8 +12,6 @@
 <body>
 
 <?php
-// O CÓDIGO CHAVE: Inclui o conteúdo do ficheiro header.php aqui.
-// Use 'require' se a navbar for absolutamente essencial para a página.
 require 'navbar.php';
 ?>
 
