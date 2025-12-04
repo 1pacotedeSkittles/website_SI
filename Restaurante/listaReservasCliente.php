@@ -8,19 +8,9 @@
 <body>
 
 <header>
-    <nav>
-        <div>
-            <a href="index.html"><strong>eatEasy</strong></a>
-        </div>
-
-        <div>
-            <input type="search" placeholder="Pesquisar...">
-        </div>
-
-        <div>
-            <a href="contactos.html">Contactos</a>
-        </div>
-    </nav>
+    <?php
+    require 'navbar.php';
+    ?>
 </header>
 
 <main>

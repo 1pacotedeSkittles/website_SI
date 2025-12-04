@@ -7,16 +7,9 @@
 <body>
 
 <header>
-    <nav>
-        <div>
-            <a href="index.html"> <img src="../Logo/eatEasy.png" height="32" width="149" alt="logo"/></a>
-        </div>
-
-        <ul id="menu-navegacao">
-            <li><a href="contactos.html">Contactos</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+    <?php
+    require 'navbar.php';
+    ?>
 </header>
 
 <main>

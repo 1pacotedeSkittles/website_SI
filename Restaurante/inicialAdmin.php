@@ -8,7 +8,7 @@
 <body>
 
 <header>
-    <nav>
+    <!-- <nav>
         <div>
             <a href="index.html"><strong>eatEasy</strong></a>
         </div>
@@ -20,7 +20,12 @@
         <div>
             <a href="contactos.html">Contactos</a>
         </div>
-    </nav>
+    </nav> -->
+
+    <?php
+    require 'navbar.php';
+    ?>
+
 </header>
 
 <main>

@@ -10,9 +10,9 @@
 </head>
 <body>
 
-<?php
-require 'navbar.php';
-?>
+    <?php
+    require 'navbar.php';
+    ?>
 
 <main>
     <div class="Login">
