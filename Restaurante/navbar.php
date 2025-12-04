@@ -7,8 +7,8 @@
 
         <ul class="nav-menu">
             <li><a href="login.php">Login</a></li>
-            <li><a href="html_code/loginRegisto.html">Registar</a></li>
-            <li><a href="contactos.html">Contactos</a></li>
+            <li><a href="loginRegisto.php">Registar</a></li>
+            <li><a href="contactos.php">Contactos</a></li>
         </ul>
     </nav>
 </header>
