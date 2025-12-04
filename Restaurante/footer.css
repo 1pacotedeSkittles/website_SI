@@ -1,0 +1,7 @@
+html, body {
+    /* removemos assim qualquer margem ou padding já existentes */
+    margin: 0;
+    padding: 0;
+    height: 100%;/* É boa prática também definir a altura a 100% para evitar problemas de altura */
+}
+

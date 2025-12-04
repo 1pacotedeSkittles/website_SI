@@ -7,6 +7,7 @@
     <title>eatEasy</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
@@ -64,14 +65,9 @@ require 'navbar.php';
 </main>
 
 <footer>
-    <div>
-        <p>Sobre nós</p>
-        <p>Termos de utilização</p>
-    </div>
-
-    <div>
-        <!--icones redes-->
-    </div>
+    <?php
+    require 'footer.php';
+    ?>
 </footer>
 
 </body>
