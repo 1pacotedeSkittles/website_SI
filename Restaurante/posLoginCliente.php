@@ -21,7 +21,7 @@
 
         <aside>
             <p>
-                [👤] Nome Cliente
+                Nome Cliente
             </p>
 
             <section>
