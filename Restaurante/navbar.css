@@ -8,9 +8,9 @@ html, body {
 
 .navbar-container{
     width: 100vw; /* Ocupa 100% da largura do viewport */
-    background-color:#e0d2b7; /* Escolha a cor de fundo desejada aqui */
+    /*background-color:#e0d2b7;*/
     /* Você pode adicionar padding aqui para dar altura à barra */
-    padding: 0.5vh 0; /* Espaçamento vertical (topo/baixo), sem margem lateral */
+    /*border-bottom:1px solid black;*/
 }
 
 .nav{
@@ -18,7 +18,7 @@ html, body {
     align-items:center;/* alinha verticalmente no centro */
     justify-content:space-between;
     width: 95vw; /* o que vai ocupar do ecrã*/
-    margin: 3vh 2vw 3vh 2vw;/*margem*/
+    margin: 5vh 2vw 0 2vw;/*margem*/
     /*background-color:pink;*/
 }
 
