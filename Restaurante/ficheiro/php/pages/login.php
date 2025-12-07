@@ -1,17 +1,26 @@
+<?php
+// 1. INICIAR SESSÃO para aceder a variáveis de sessão (como mensagens de erro)
+session_start();
+
+// Caminho ajustado: voltar um nível (../) para 'php/', depois entrar em 'includes/'
+require '../includes/navbar.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport !-->
-    <link rel="stylesheet" href="https://use.typekit.net/zcu4bcg.css"> <!-- Font !-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/zcu4bcg.css">
     <title>eatEasy</title>
+
     <link rel="stylesheet" href="../../css/login.css">
     <link rel="stylesheet" href="../../css/navbar.css">
 </head>
 <body>
 
 <?php
-require '../includes/navbar.php';
+// A navbar já foi incluída no topo do ficheiro (require '../includes/navbar.php';)
 ?>
 
 <main>
@@ -20,18 +29,27 @@ require '../includes/navbar.php';
 
         <div class="login-box">
             <h1 class="login-title">Login</h1>
-            <form action="#" method="POST" class="login-form">
 
-                <input type="text" name="nome/id" placeholder="Nome/ID" required class="input-field">
+            <?php
+            if (isset($_SESSION['login_erro'])) {
+                // Se houver erro após o processamento, exibe-o
+                echo '<p style="color: red; text-align: center; margin-bottom: 15px;">' . $_SESSION['login_erro'] . '</p>';
+                unset($_SESSION['login_erro']); // Limpa a variável após exibição
+            }
+            ?>
+
+            <form action="../action/processa.login.php" method="POST" class="login-form">
+
+                <input type="text" name="nome_ou_email" placeholder="Nome/ID ou Email" required class="input-field">
 
                 <input type="password" name="password" placeholder="Palavra-Passe" required class="input-field">
 
                 <div class="create-account-link-container">
-                    <a href="#" class="create-account-link">Criar conta</a>
+                    <a href="loginRegisto.php" class="create-account-link">Criar conta</a>
                 </div>
 
                 <div id="botao-entrar">
-                    <a href="posLoginCliente.html" class="entrar">Entrar</a>
+                    <button type="submit" class="entrar">Entrar</button>
                 </div>
 
             </form>
@@ -40,7 +58,7 @@ require '../includes/navbar.php';
 </main>
 
 <footer class="login-para-admin">
-    <a href="login-admin.html" class="login-admin">Administrador</a>
+    <a href="loginAdmin.php" class="login-admin">Administrador</a>
 </footer>
 
 </body>
