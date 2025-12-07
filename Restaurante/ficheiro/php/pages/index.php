@@ -65,7 +65,7 @@ require '../includes/navbar.php';
 
 <footer>
     <?php
-    require 'footer.php';
+    require '../includes/footer.php';
     ?>
 </footer>
 
