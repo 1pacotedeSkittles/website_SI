@@ -2,7 +2,7 @@
     <!-- navbar do website !-->
     <nav class="nav">
         <a href="index.php" class="nav-logo-link">
-            <img src="Logo/eatEasy.png" alt="logo website"/>
+            <img src="../../Logo/eatEasy.png" alt="logo website"/>
         </a>
 
         <ul class="nav-menu">
