@@ -18,7 +18,7 @@
 
         <div class="registo-box">
             <h1 class="registo-title">Registar Conta</h1>
-            <form action="processar_registo.php" method="POST" class="registo-form">
+            <form action="processa.registo.php" method="POST" class="registo-form">
 
                 <input type="text" name="nome" placeholder="Nome Completo" required class="input-field">
 
