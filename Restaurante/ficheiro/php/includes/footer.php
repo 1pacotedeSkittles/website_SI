@@ -1,7 +1,9 @@
 <footer class="footer_container">
     <div class="footer_content">
-        <p>Sobre nós</p>
-        <p>Termos de utilização</p>
+        <ul class="footer_menu">
+            <li><a href=""> Sobre nós</a></li>
+            <li><a href="">Termos de utilização</a></li>
+        </ul>
         <!--icones redes-->
         <a href="https://www.instagram.com/cristiano/" class="instagram-logo-link" target="_blank">
             <img src="../../../redes_sociais/instagram_1.png" alt="logo instagram"/>

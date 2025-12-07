@@ -17,7 +17,14 @@ html, body {
     /*border:1px solid black;*/
 }
 
-.footer_content p{
+.footer_menu{
+    display:flex;
+    list-style:none;
+}
+
+.footer_menu li a{
+    text-decoration: none;/*retira o sublinhado padrão dos links*/
+    color:black;
     font-family:"futura-pt", sans-serif;/* fonte a ser usada*/
     font-weight:400;/* 300 em princípio é valor normal*/
     font-style:normal;
@@ -68,4 +75,8 @@ html, body {
     /*border:1px solid black;*/
     width: 35px;
     height: 35px;
+}
+
+.footer_menu li a:hover{
+    color:#78400f;
 }
