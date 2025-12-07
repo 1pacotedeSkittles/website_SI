@@ -8,7 +8,7 @@
 
 <header>
     <?php
-    require 'navbar.php';
+    require '../includes/navbar.php';
     ?>
 </header>
 

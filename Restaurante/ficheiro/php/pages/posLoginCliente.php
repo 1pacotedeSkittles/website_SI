@@ -9,33 +9,9 @@
 
 <header>
     <nav>
-        <div>
-            <a href="index.html">
-                <strong>eatEasy</strong>
-            </a>
-        </div>
-
-        <div>
-            <input type="search" placeholder="Pesquisar...">
-        </div>
-
-        <aside>
-            <p>
-                Nome Cliente
-            </p>
-
-            <section>
-                <h3>As minhas reservas</h3>
-                <ul>
-                    <li>Reserva 1 (data/hora)</li>
-                    <li>Reserva 2 (data/hora)</li>
-                    <li>Reserva 3 (data/hora)</li>
-                </ul>
-            </section>
-
-            <a href="contactos.html">Contactos</a>
-        </aside>
-
+        <?php
+        require '../includes/navbar.php';
+        ?>
     </nav>
 </header>
 
