@@ -3,7 +3,7 @@
 session_start();
 
 // Caminho ajustado: voltar um nível (../) para 'php/', depois entrar em 'includes/'
-require '../includes/navbar.php';
+/* require '../includes/navbar.php';*/
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +19,15 @@ require '../includes/navbar.php';
 </head>
 <body>
 
-<?php
-// A navbar já foi incluída no topo do ficheiro (require '../includes/navbar.php';)
-?>
+    <nav class="nav_menu">
+        <a href="../pages/index.php">
+            <img src="../../../Logo/eatEasy.png"  alt="logo"/>
+        </a>
+    </nav>
 
 <main>
     <div class="Login">
-        <div class="logo">eatEasy</div>
+        <!--<div class="logo">eatEasy</div>!-->
 
         <div class="login-box">
             <h1 class="login-title">Login</h1>

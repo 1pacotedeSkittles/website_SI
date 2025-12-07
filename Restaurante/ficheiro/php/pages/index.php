@@ -10,64 +10,67 @@
 </head>
 
 <body>
+    <nav>
+        <!--CHAMAR A NAVBAR !-->
+        <?php
+        require '../includes/navbar.php';
+        ?>
+    </nav>
 
-<?php
-require '../includes/navbar.php';
-?>
-
-<main id="restaurantes">
-    <div>
-        <h1>Faça já a sua reserva</h1>
-    </div>
-
-    <article>
+    <main id="restaurantes">
         <div>
-            <img src="/fotos/foto.webp" height="800" width="600" alt="foto1"/>
-        </div>
-        <div>
-            <h3>Restaurante 1</h3>
-            <p>localização</p>
-            <p>Tipo de comida</p>
-            <p>Preço médio por prato</p>
+            <h1>Faça já a sua reserva</h1>
         </div>
 
-        <div>
-            <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto2"/>
-        </div>
-        <div>
-            <h3>Restaurante 2</h3>
-            <p>localização</p>
-            <p>Tipo de comida</p>
-            <p>Preço médio por prato</p>
-        </div>
+        <article>
+            <div>
+                <img src="/fotos/foto.webp" height="800" width="600" alt="foto1"/>
+            </div>
+            <div>
+                <h3>Restaurante 1</h3>
+                <p>localização</p>
+                <p>Tipo de comida</p>
+                <p>Preço médio por prato</p>
+            </div>
 
-        <div>
-            <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto3"/>
-        </div>
-        <div>
-            <h3>Restaurante 3</h3>
-            <p>localização</p>
-            <p>Tipo de comida</p>
-            <p>Preço médio por prato</p>
-        </div>
+            <div>
+                <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto2"/>
+            </div>
+            <div>
+                <h3>Restaurante 2</h3>
+                <p>localização</p>
+                <p>Tipo de comida</p>
+                <p>Preço médio por prato</p>
+            </div>
 
-        <div>
-            <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto4"/>
-        </div>
-        <div>
-            <h3>Restaurante 4</h3>
-            <p>localização</p>
-            <p>Tipo de comida</p>
-            <p>Preço médio por prato</p>
-        </div>
-    </article>
-</main>
+            <div>
+                <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto3"/>
+            </div>
+            <div>
+                <h3>Restaurante 3</h3>
+                <p>localização</p>
+                <p>Tipo de comida</p>
+                <p>Preço médio por prato</p>
+            </div>
 
-<footer>
-    <?php
-    require '../includes/footer.php';
-    ?>
-</footer>
+            <div>
+                <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto4"/>
+            </div>
+            <div>
+                <h3>Restaurante 4</h3>
+                <p>localização</p>
+                <p>Tipo de comida</p>
+                <p>Preço médio por prato</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <!--CHAMAR O FOOTER !-->
+        <?php
+        require '../includes/footer.php';
+        ?>
+    </footer>
 
 </body>
 </html>
