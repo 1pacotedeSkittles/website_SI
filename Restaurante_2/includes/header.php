@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../public/css/header.css"> <!--chamar o header.css!-->
+
 <header class="navbar-container">
     <!-- navbar do website !-->
     <nav class="nav">
