@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../public/css/index.css">
+<link rel="stylesheet" href="../../public/css/index.css">
 
 <main id="restaurantes">
     <div>
