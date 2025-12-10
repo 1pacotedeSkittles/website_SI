@@ -1,5 +1,5 @@
 <!-- Formulário de login -->
-<form action="../action/processa.login.php" method="POST" class="login-form">
+<form action="../controllers/logincontroller.php" method="POST" class="login-form">
 
     <input type="text" name="nome_ou_email" placeholder="Nome/ID ou Email" required class="input-field">
 
