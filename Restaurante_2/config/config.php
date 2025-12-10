@@ -10,6 +10,9 @@ function getDBConnection()  /*criação de uma função para a conexão*/
 
     echo "Ligacao estabelecida!";
 // do something here
-    pg_close($connection);
+    return $connection;
 }
+
+// Cria a conexão global
+$conn = getDBConnection();
 
