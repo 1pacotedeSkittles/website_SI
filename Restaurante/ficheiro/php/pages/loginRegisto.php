@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>eatEasy - Registar</title>
+    <link rel="stylesheet" href="../../css/loginRegisto.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/footer.css">
 </head>
 <body>
 
 <header>
-    <?php
-    require '../includes/navbar.php';
-    ?>
+    <nav>
+        <?php
+        require '../includes/navbar.php';
+        ?>
+    </nav>
 </header>
 
 <main>
     <div class="Registo">
-        <div class="logo">eatEasy</div>
+        <div class="logo"></div>
 
         <div class="registo-box">
             <h1 class="registo-title">Registar Conta</h1>
@@ -29,7 +34,7 @@
                 <input type="password" name="password_confirmacao" placeholder="Confirmar Palavra-Passe" required class="input-field">
 
                 <div class="login-link-container">
-                    <a href="login.html" class="login-link">Já tenho conta (Login)</a>
+                    <a href="login.php" class="login-link">Já tenho conta</a>
                 </div>
 
                 <div id="botao-registar">
@@ -42,7 +47,7 @@
 </main>
 
 <footer class="login-para-admin">
-    <a href="login-admin.html" class="login-admin">Administrador</a>
+    <a href="loginAdmin.php" class="login-admin">Administrador</a>
 </footer>
 
 </body>

@@ -8,9 +8,7 @@ html, body {
 
 .navbar-container{
     width: 100vw; /* Ocupa 100% da largura do viewport */
-    /*background-color:#e0d2b7;*/
-    /* Você pode adicionar padding aqui para dar altura à barra */
-    /*border-bottom:1px solid black;*/
+
 }
 
 .nav{
@@ -44,7 +42,7 @@ html, body {
 
 .nav-menu li a{
     text-decoration: none;/*retira o sublinhado padrão dos links*/
-    color: black;
+    color:black;
     font-family:"futura-pt", sans-serif;/* fonte a ser usada*/
     font-weight:400;/* 300 em princípio é valor normal*/
     font-style:normal;

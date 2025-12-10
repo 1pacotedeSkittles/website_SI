@@ -1,23 +1,190 @@
-html, body {
-    /* removemos assim qualquer margem ou padding já existentes */
+/* ====================================
+   1. ESTILOS GLOBAIS E BACKGROUND
+   ==================================== */
+* {
+    /* Box-sizing para layout previsível */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    height: 100%;/* É boa prática também definir a altura a 100% para evitar problemas de altura */
 }
 
-.nav_menu{
-    display:flex;
-    width: 95vw; /* o que vai ocupar do ecrã*/
-    margin: 6.5vh 2vw 0 2vw;/*margem*/
-    /*background-color:pink;*/
-    justify-content:left;
-    /*border:1px solid black;*/
+body {
+    /* Aplica a fonte do Typekit */
+    font-family: "museo-sans", sans-serif;
+    /* Fundo preto conforme o wireframe */
+    background-color: #eeeeee;
+    color: #333333;
+    /* Ocupa a altura total da viewport */
+    min-height: 100vh;
+    display: flex; /* Usado para posicionar o footer/admin link */
+    flex-direction: column;
 }
 
-.nav_menu img{
-    /*border:1px solid black;*/
-    /*padding-top:1vw;*/
-    padding-left:1.5vw;
-    height:1.5vw;
-    width:auto;
+/* Garante que o conteúdo principal (Main) ocupe o espaço restante e centralize o formulário */
+main {
+    flex-grow: 1; /* Ocupa o espaço entre a nav e o footer */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ====================================
+   2. NAVBAR E LOGO (Ajustes para Login Page)
+   ==================================== */
+
+.nav_menu {
+    /* Mantém a navbar no topo */
+    width: 100%;
+    padding: 20px 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between; /* Espaço entre logo e Contatos */
+    align-items: center;
+}
+
+.nav_menu img {
+    /* Ajuste de tamanho do logo se necessário */
+    height: 30px;
+}
+
+/* Estilo para "Contactos" (Se existisse, mas está implicito no wireframe) */
+.contactos {
+    color: #333;
+    font-size: 1em;
+}
+
+
+/* ====================================
+   3. CAIXA DE LOGIN/REGISTO
+   ==================================== */
+
+.Login, .Registo {
+    /* A caixa branca que envolve o formulário (o wireframe usa quase a largura total do espaço) */
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px; /* Limita a largura do formulário */
+    padding: 40px;
+    /* Ajuste de sombra opcional */
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+}
+
+.login-title, .registo-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Formulário */
+.login-form, .registo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Campos de Input */
+.input-field {
+    /* Estilo cinza claro conforme o wireframe */
+    background-color: #eee;
+    border: none;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    border-radius: 3px;
+    color: #333;
+}
+
+.input-field::placeholder {
+    color: #777;
+}
+
+/* Botão de Entrar/Registar */
+.entrar, .registar {
+    background-color: #333; /* Cor escura para o botão (ou a cor de marca, se houver) */
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Ocupa a largura total */
+}
+
+.entrar:hover, .registar:hover {
+    background-color: #555;
+}
+
+/* Container para links (Criar conta / Já tenho conta) */
+.create-account-link-container, .login-link-container {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.create-account-link, .login-link {
+    font-size: 0.9em;
+    color: #777; /* Cor cinza para o link */
+}
+
+.create-account-link:hover, .login-link:hover {
+    text-decoration: underline;
+}
+
+/* Div para o botão no HTML (apenas se for necessário, caso contrário o botão já tem 100% de largura) */
+#botao-entrar, #botao-registar {
+    margin-top: 15px;
+}
+
+
+/* ====================================
+   4. FOOTER / LINK ADMINISTRADOR
+   ==================================== */
+
+.login-para-admin {
+    /* Fixa o footer na parte inferior, alinhado à esquerda como no wireframe */
+    text-align: left;
+    padding: 10px 50px;
+    margin-top: auto; /* Empurra o footer para baixo */
+}
+
+.login-admin {
+    color: #aaa; /* Cor clara no fundo escuro */
+    font-size: 0.8em;
+}
+
+.login-admin:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ====================================
+   5. RESPONSIVIDADE
+   ==================================== */
+@media (max-width: 600px) {
+    .nav_menu {
+        padding: 15px 20px;
+    }
+
+    .Login, .Registo {
+        padding: 30px 20px;
+        /* Ocupa mais espaço em telas pequenas */
+        max-width: 90%;
+    }
+
+    .login-title, .registo-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .login-para-admin {
+        padding: 10px 20px;
+    }
 }

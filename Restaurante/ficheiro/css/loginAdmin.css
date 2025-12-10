@@ -1,0 +1,124 @@
+/* ====================================
+   1. ESTILOS GLOBAIS E BACKGROUND
+   ==================================== */
+/* !important: Garante que este fundo não seja sobreposto por um CSS mais genérico */
+body {
+    background-color: #f0f0f0 !important;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "museo-sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Esconde o link para administrador, pois já estamos nele */
+.login-para-admin {
+    display: none;
+}
+
+/* ====================================
+   2. NAVBAR
+   ==================================== */
+/* Se a navbar está a dar conflito, ajuste o seu container aqui */
+header {
+    background-color: #fff !important; /* Deve ser branco */
+    border-bottom: 1px solid #ddd;
+    /* Outros estilos da navbar devem estar em navbar.css */
+}
+
+/* ====================================
+   3. CAIXA DE LOGIN ADMIN (O MAIS IMPORTANTE)
+   ==================================== */
+
+/* O elemento que contém o formulário: .login-box */
+.Login-Admin .login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    /* Sombra para simular o efeito 3D */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 380px; /* Largura ligeiramente menor para o efeito compacto */
+}
+
+.Login-Admin .login-title {
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Campos de Input */
+.Login-Admin .input-field {
+    /* Garante que o input seja cinza claro */
+    background-color: #e8e8e8 !important;
+    border: none;
+    padding: 15px 15px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    border-radius: 3px;
+    color: #333;
+    width: 100%;
+}
+
+.Login-Admin .input-field::placeholder {
+    color: #777;
+}
+
+/* Link 'Criar conta' (Visível e no canto inferior direito) */
+.Login-Admin .create-account-link-container {
+    text-align: right;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.Login-Admin .create-account-link {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Botão Entrar (Escuro e ocupa a largura total) */
+.Login-Admin #botao-entrar {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.Login-Admin .entrar {
+    /* Garante que o botão seja escuro */
+    background-color: #333 !important;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.Login-Admin .entrar:hover {
+    background-color: #444;
+}
+
+/* ====================================
+   4. RESPONSIVIDADE
+   ==================================== */
+@media (max-width: 600px) {
+    .Login-Admin .login-box {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+}

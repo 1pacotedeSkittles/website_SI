@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>eatEasy</title>
+    <link rel="stylesheet" href="../../css/loginRegisto.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+
 </head>
 <body>
 <header>
@@ -13,11 +17,11 @@
 
 <main>
     <div class="Login-Admin">
-        <div class="logo">eatEasy</div>
+        <div class="logo"></div>
 
         <div class="login-box">
             <h1 class="login-title">Login</h1>
-            <form action="#" method="POST" class="login-form">sdad
+            <form action="#" method="POST" class="login-form">
 
                 <input type="text" name="nome" placeholder="Nome" required class="input-field">
 
@@ -28,7 +32,7 @@
                 </div>
 
                 <div id="botao-entrar">
-                    <a href="inicialAdmin.html" class="entrar">Entrar</a>
+                    <a href="inicialAdmin.php" class="entrar">Entrar</a>
                 </div>
 
             </form>

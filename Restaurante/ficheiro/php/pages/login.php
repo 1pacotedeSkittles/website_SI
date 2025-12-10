@@ -18,12 +18,14 @@ session_start();
     <link rel="stylesheet" href="../../css/navbar.css">
 </head>
 <body>
-
-    <nav class="nav_menu">
-        <a href="../pages/index.php">
-            <img src="../../../Logo/eatEasy.png"  alt="logo"/>
-        </a>
+<header>
+    <nav>
+        <!--CHAMAR A NAVBAR !-->
+        <?php
+        require '../includes/navbar.php';
+        ?>
     </nav>
+</header>
 
 <main>
     <div class="Login">
