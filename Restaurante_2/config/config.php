@@ -8,8 +8,8 @@ function getDBConnection()  /*criação de uma função para a conexão*/
         die("Erro na ligacao");
     }
 
-    echo "Ligacao estabelecida!";
-// do something here
+    // echo "Ligacao estabelecida!";
+    // do something here
     return $connection;
 }
 
