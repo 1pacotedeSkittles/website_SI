@@ -10,37 +10,28 @@
 <body>
 
 <header>
-    <nav>
-        <?php
-        require '../includes/navbar.php';
-        ?>
-    </nav>
+    <?php include '../includes/navbar.php'; ?>
 </header>
 
 <main>
-    <div class="Registo">
-        <div class="logo"></div>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1 class="auth-title">Registo</h1>
 
-        <div class="registo-box">
-            <h1 class="registo-title">Registar Conta</h1>
-            <form action="processa.registo.php" method="POST" class="registo-form">
+            <?php if(isset($_SESSION['registo_erro'])): ?>
+                <div class="msg-error"><?php echo $_SESSION['registo_erro']; unset($_SESSION['registo_erro']); ?></div>
+            <?php endif; ?>
 
-                <input type="text" name="nome" placeholder="Nome Completo" required class="input-field">
+            <form class="auth-form" action="action/processa.registo.php" method="POST">
+                <input class="input-field" type="text" name="nome" placeholder="Nome completo" required>
+                <input class="input-field" type="email" name="email" placeholder="Email" required>
+                <input class="input-field" type="password" name="password" placeholder="Palavra-Passe" required>
 
-                <input type="email" name="email" placeholder="E-mail" required class="input-field">
-
-                <input type="password" name="password" placeholder="Palavra-Passe" required class="input-field">
-
-                <input type="password" name="password_confirmacao" placeholder="Confirmar Palavra-Passe" required class="input-field">
-
-                <div class="login-link-container">
-                    <a href="login.php" class="login-link">Já tenho conta</a>
+                <div class="aux-links">
+                    <a href="login.php">Já tenho conta</a>
                 </div>
 
-                <div id="botao-registar">
-                    <button type="submit" class="registar">Criar Conta</button>
-                </div>
-
+                <button class="action-btn" type="submit">Registar</button>
             </form>
         </div>
     </div>

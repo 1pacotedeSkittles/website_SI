@@ -1,9 +1,5 @@
 <?php
-// 1. INICIAR SESSÃO para aceder a variáveis de sessão (como mensagens de erro)
 session_start();
-
-// Caminho ajustado: voltar um nível (../) para 'php/', depois entrar em 'includes/'
-/* require '../includes/navbar.php';*/
 ?>
 
 <!DOCTYPE html>
@@ -18,45 +14,34 @@ session_start();
     <link rel="stylesheet" href="../../css/navbar.css">
 </head>
 <body>
+
 <header>
-    <nav>
-        <!--CHAMAR A NAVBAR !-->
-        <?php
-        require '../includes/navbar.php';
-        ?>
-    </nav>
+    <?php include '../includes/navbar.php'; ?>
 </header>
 
 <main>
-    <div class="Login">
-        <!--<div class="logo">eatEasy</div>!-->
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1 class="auth-title">Login</h1>
 
-        <div class="login-box">
-            <h1 class="login-title">Login</h1>
+            <?php if(isset($_SESSION['login_erro'])): ?>
+                <div class="msg-error"><?php echo $_SESSION['login_erro']; unset($_SESSION['login_erro']); ?></div>
+            <?php endif; ?>
 
-            <?php
-            if (isset($_SESSION['login_erro'])) {
-                // Se houver erro após o processamento, exibe-o
-                echo '<p style="color: red; text-align: center; margin-bottom: 15px;">' . $_SESSION['login_erro'] . '</p>';
-                unset($_SESSION['login_erro']); // Limpa a variável após exibição
-            }
-            ?>
+            <form class="auth-form" action="../action/processa.login.php" method="POST">
+                <input class="input-field" type="email" name="email" placeholder="Email" required>
+                <input class="input-field" type="password" name="password" placeholder="Palavra-Passe" required>
 
-            <form action="../action/processa.login.php" method="POST" class="login-form">
-
-                <input type="text" name="nome_ou_email" placeholder="Nome/ID ou Email" required class="input-field">
-
-                <input type="password" name="password" placeholder="Palavra-Passe" required class="input-field">
-
-                <div class="create-account-link-container">
-                    <a href="loginRegisto.php" class="create-account-link">Criar conta</a>
+                <div class="aux-links">
+                    <a href="loginRegisto.php">Criar conta</a>
                 </div>
 
-                <div id="botao-entrar">
-                    <button type="submit" class="entrar">Entrar</button>
-                </div>
-
+                <button class="action-btn" type="submit">Entrar</button>
             </form>
+
+            <div class="auth-footer">
+                <a href="../pages/loginAdmin.php">Administrador</a>
+            </div>
         </div>
     </div>
 </main>

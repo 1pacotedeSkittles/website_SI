@@ -1,48 +1,47 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>eatEasy</title>
-    <link rel="stylesheet" href="../../css/loginRegisto.css">
-    <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/footer.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eatEasy - Login Admin</title>
 
+    <link rel="stylesheet" href="https://use.typekit.net/zcu4bcg.css">
+
+    <!-- CSS base igual ao login do cliente -->
+    <link rel="stylesheet" href="../../css/loginAdmin.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
 </head>
+
 <body>
+
 <header>
-    <?php
-    require '../includes/navbar.php';
-    ?>
+    <?php require '../includes/navbar.php'; ?>
 </header>
 
 <main>
-    <div class="Login-Admin">
-        <div class="logo"></div>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1 class="auth-title">Login Admin</h1>
 
-        <div class="login-box">
-            <h1 class="login-title">Login</h1>
-            <form action="#" method="POST" class="login-form">
+            <?php if(isset($_SESSION['admin_erro'])): ?>
+                <div class="msg-error"><?php echo $_SESSION['admin_erro']; unset($_SESSION['admin_erro']); ?></div>
+            <?php endif; ?>
 
-                <input type="text" name="nome" placeholder="Nome" required class="input-field">
+            <form class="auth-form" action="processa.login.admin.php" method="POST">
+                <input class="input-field" type="text" name="id_trabalho" placeholder="ID de Trabalho" required>
+                <input class="input-field" type="password" name="password_admin" placeholder="Palavra-Passe" required>
 
-                <input type="password" name="password" placeholder="Palavra-Passe" required class="input-field">
-
-                <div class="create-account-link-container">
-                    <a href="#" class="create-account-link">Criar conta</a>
-                </div>
-
-                <div id="botao-entrar">
-                    <a href="inicialAdmin.php" class="entrar">Entrar</a>
-                </div>
-
+                <!-- Não mostrar link criar conta para admin -->
+                <button class="action-btn" type="submit">Entrar</button>
             </form>
         </div>
     </div>
 </main>
 
-<footer class="login-para-admin">
-    <a href="#" class="admin-link">Administrador</a>
-</footer>
 
 </body>
 </html>

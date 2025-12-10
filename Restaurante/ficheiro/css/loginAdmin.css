@@ -1,124 +1,132 @@
-/* ====================================
-   1. ESTILOS GLOBAIS E BACKGROUND
-   ==================================== */
-/* !important: Garante que este fundo não seja sobreposto por um CSS mais genérico */
-body {
-    background-color: #f0f0f0 !important;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: "museo-sans", sans-serif;
-    margin: 0;
-    padding: 0;
+/* css/login.css
+   CSS UNIFICADO para Login Cliente, Registo Cliente e Login Admin
+*/
+
+:root{
+    --bg:#eeeeee;
+    --card:#ffffff;
+    --input-bg:#efefef;
+    --text:#333333;
+    --muted:#777777;
+    --accent:#333333; /* botão (igual em todos) */
+    --accent-hover:#555555;
+    --radius:6px;
+    --maxw:520px;
 }
 
-main {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+/* RESET / GLOBAL */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+    font-family:"museo-sans",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background:var(--bg);
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
 }
 
-/* Esconde o link para administrador, pois já estamos nele */
-.login-para-admin {
-    display: none;
+/* MAIN CENTERING */
+main{
+    flex:1 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
 }
 
-/* ====================================
-   2. NAVBAR
-   ==================================== */
-/* Se a navbar está a dar conflito, ajuste o seu container aqui */
-header {
-    background-color: #fff !important; /* Deve ser branco */
-    border-bottom: 1px solid #ddd;
-    /* Outros estilos da navbar devem estar em navbar.css */
+/* CONTAINER COMUM */
+.auth-container{
+    width:100%;
+    max-width:var(--maxw);
+    padding:20px;
 }
 
-/* ====================================
-   3. CAIXA DE LOGIN ADMIN (O MAIS IMPORTANTE)
-   ==================================== */
-
-/* O elemento que contém o formulário: .login-box */
-.Login-Admin .login-box {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 5px;
-    /* Sombra para simular o efeito 3D */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 380px; /* Largura ligeiramente menor para o efeito compacto */
+/* CAIXA (o cartão branco) — idêntico em todas */
+.auth-box{
+    background:var(--card);
+    padding:36px;
+    border-radius:calc(var(--radius) + 2px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+    width:100%;
 }
 
-.Login-Admin .login-title {
-    font-size: 2em;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 30px;
+/* TÍTULO */
+.auth-title{
+    font-size:2.25rem;
+    font-weight:700;
+    color:var(--text);
+    text-align:center;
+    margin-bottom:22px;
 }
 
-/* Campos de Input */
-.Login-Admin .input-field {
-    /* Garante que o input seja cinza claro */
-    background-color: #e8e8e8 !important;
-    border: none;
-    padding: 15px 15px;
-    margin-bottom: 15px;
-    font-size: 1em;
-    border-radius: 3px;
-    color: #333;
-    width: 100%;
+/* MENSAGENS DE ERRO */
+.msg-error{
+    color:#c33;
+    text-align:center;
+    margin-bottom:16px;
+    font-size:0.95rem;
 }
 
-.Login-Admin .input-field::placeholder {
-    color: #777;
+/* FORMULÁRIO COMUM */
+.auth-form{display:flex;flex-direction:column;gap:12px}
+
+/* INPUTS */
+.input-field{
+    width:100%;
+    background:var(--input-bg);
+    border:1px solid transparent;
+    padding:14px 12px;
+    font-size:1rem;
+    border-radius:6px;
+    color:var(--text);
+    outline:none;
+    transition:box-shadow .15s, border-color .12s;
+}
+.input-field::placeholder{color:var(--muted)}
+.input-field:focus{
+    border-color:rgba(0,0,0,0.08);
+    box-shadow:0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* Link 'Criar conta' (Visível e no canto inferior direito) */
-.Login-Admin .create-account-link-container {
-    text-align: right;
-    width: 100%;
-    margin-top: -10px;
-    margin-bottom: 25px;
+/* LINKS auxiliares (criar conta / já tenho conta) - alinhamento igual em todas */
+.aux-links{
+    display:flex;
+    justify-content:flex-end;
+    font-size:0.92rem;
+    margin-top:4px;
 }
+.aux-links a{color:var(--muted); text-decoration:none}
+.aux-links a:hover{text-decoration:underline}
 
-.Login-Admin .create-account-link {
-    font-size: 0.9em;
-    color: #777;
+/* BOTÕES (idêntico em todas) */
+.action-btn{
+    width:100%;
+    padding:12px 14px;
+    background:var(--accent);
+    color:#fff;
+    border:0;
+    border-radius:6px;
+    font-size:1.05rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:background .18s, transform .05s;
 }
+.action-btn:hover{background:var(--accent-hover)}
+.action-btn:active{transform:translateY(1px)}
 
-/* Botão Entrar (Escuro e ocupa a largura total) */
-.Login-Admin #botao-entrar {
-    width: 100%;
-    margin-top: 10px;
+/* FOOTER/ADMIN-LINK (apresenta apenas na página de cliente login) */
+.auth-footer{
+    margin-top:14px;
+    padding:10px 0 0 0;
+    text-align:left;
 }
+.auth-footer a{color:#aaa;font-size:0.88rem;text-decoration:none}
+.auth-footer a:hover{color:#555;text-decoration:underline}
 
-.Login-Admin .entrar {
-    /* Garante que o botão seja escuro */
-    background-color: #333 !important;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    font-size: 1.1em;
-    font-weight: 600;
-    border-radius: 3px;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-    text-align: center;
-}
-
-.Login-Admin .entrar:hover {
-    background-color: #444;
-}
-
-/* ====================================
-   4. RESPONSIVIDADE
-   ==================================== */
-@media (max-width: 600px) {
-    .Login-Admin .login-box {
-        padding: 30px 20px;
-        max-width: 90%;
-    }
+/* RESPONSIVO */
+@media (max-width:640px){
+    .auth-box{padding:26px}
+    .auth-title{font-size:1.75rem}
+    body{padding-bottom:18px}
 }

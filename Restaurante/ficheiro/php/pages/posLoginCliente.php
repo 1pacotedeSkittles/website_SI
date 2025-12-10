@@ -1,92 +1,90 @@
+<?php
+session_start();
+require '../includes/conexao.php';
+
+// -------- OBTÉM DADOS DO CLIENTE ----------
+$id_cliente = $_SESSION['id_cliente'];
+
+$sql = $conn->prepare("SELECT nome FROM clientes WHERE id = ?");
+$sql->bind_param("i", $id_cliente);
+$sql->execute();
+$result = $sql->get_result();
+$cliente = $result->fetch_assoc();
+
+// -------- OBTÉM RESERVAS ----------
+$sql2 = $conn->prepare("SELECT nome_restaurante, data_reserva FROM reservas WHERE id_cliente = ?");
+$sql2->bind_param("i", $id_cliente);
+$sql2->execute();
+$reservas = $sql2->get_result();
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eatEasy - Inicial Cliente</title>
+    <title>eatEasy - Cliente</title>
+    <link rel="stylesheet" href="cliente_home.css">
 </head>
+
 <body>
 
 <header>
-    <nav>
-        <?php
-        require '../includes/navbar.php';
-        ?>
-    </nav>
+    <?php require '../includes/navbar.php'; ?>
 </header>
 
 <main>
-    <hr>
+    <h2 class="titulo-secao">Faça já a sua reserva</h2>
 
-    <h2>Faça já a sua reserva</h2>
+    <section class="grid-restaurantes">
 
-    <section id="restaurantes-destaque">
-
-        <article style="border: 1px solid #ccc; padding: 10px; margin: 15px;">
-            <a href="reserva_restaurante1.html">
-                <img src="imagens/restaurante_1.jpg" alt="Foto Restaurante 1" width="300" height="200">
-            </a>
-
-            <h3>Restaurante 1</h3>
-            <ul>
-                <li>Localização</li>
-                <li>Tipo comida</li>
-                <li>Preço médio por prato</li>
-            </ul>
-        </article>
-
-        <article style="border: 1px solid #ccc; padding: 10px; margin: 15px;">
-            <a href="reserva_restaurante2.html">
-                <img src="imagens/restaurante_2.jpg" alt="Foto Restaurante 2" width="300" height="200">
-            </a>
-
-            <h3>Restaurante 2</h3>
-            <ul>
-                <li>Localização</li>
-                <li>Tipo comida</li>
-                <li>Preço médio por prato</li>
-            </ul>
-        </article>
-
-        <article style="border: 1px solid #ccc; padding: 10px; margin: 15px;">
-            <a href="reserva_restaurante3.html">
-                <img src="imagens/restaurante_3.jpg" alt="Foto Restaurante 3" width="300" height="200">
-            </a>
-
-            <h3>Restaurante 3</h3>
-            <ul>
-                <li>Localização</li>
-                <li>Tipo comida</li>
-                <li>Preço médio por prato</li>
-            </ul>
-        </article>
-
-        <article style="border: 1px solid #ccc; padding: 10px; margin: 15px;">
-            <a href="reserva_restaurante4.html">
-                <img src="imagens/restaurante_4.jpg" alt="Foto Restaurante 4" width="300" height="200">
-            </a>
-
-            <h3>Restaurante 4</h3>
-            <ul>
-                <li>Localização</li>
-                <li>Tipo comida</li>
-                <li>Preço médio por prato</li>
-            </ul>
-        </article>
+        <!-- Exemplo — substitui por query dinamizada depois -->
+        <?php for ($i = 1; $i <= 4; $i++): ?>
+            <article class="card-restaurante">
+                <a href="reserva_restaurante<?= $i ?>.php">
+                    <div class="foto"></div>
+                </a>
+                <h3>Restaurante <?= $i ?></h3>
+                <ul>
+                    <li>Localização</li>
+                    <li>Tipo comida</li>
+                    <li>Preço médio por prato</li>
+                </ul>
+            </article>
+        <?php endfor; ?>
 
     </section>
 </main>
 
-<footer>
-    <hr>
-    <div>
-        <a href="#">sobre nós</a> | <a href="#">termos de utilização</a>
-        <span> | 📷 f X</span>
+<!-- PAINEL LATERAL CLIENTE -->
+<aside id="painel-cliente" class="painel-fechado">
+
+    <div class="painel-header">
+        <img src="../icons/user_big.png" class="icon-user">
+        <h3><?= $cliente['nome'] ?></h3>
     </div>
-    <div>
-        <small>© 2025 eatEasy. Todos os direitos reservados.</small>
-    </div>
-</footer>
+
+    <h4 class="titulo-reservas">📘 As minhas reservas</h4>
+
+    <ul class="lista-reservas">
+
+        <?php if ($reservas->num_rows === 0): ?>
+            <li>Não tem reservas ainda.</li>
+        <?php else: ?>
+            <?php while($r = $reservas->fetch_assoc()): ?>
+                <li>
+                    <?= $r['nome_restaurante'] ?>
+                    <span><?= $r['data_reserva'] ?></span>
+                </li>
+            <?php endwhile; ?>
+        <?php endif; ?>
+
+    </ul>
+
+    <p class="copyright">© 2025 eatEasy<br>Todos os direitos reservados</p>
+</aside>
+
+<script src="cliente_home.js"></script>
 
 </body>
 </html>
