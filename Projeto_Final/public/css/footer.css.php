@@ -1,1 +1,81 @@
-<?php
+html, body {
+    /* removemos assim qualquer margem ou padding já existentes */
+    margin: 0;
+    padding: 0;
+    height: 100%;/* É boa prática também definir a altura a 100% para evitar problemas de altura */
+}
+
+.footer_container{
+    width: 100vw; /* Ocupa 100% da largura do viewport */
+}
+
+.footer_content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    /*border:1px solid black;*/
+}
+
+.footer_menu{
+    display:flex;
+    list-style:none;
+}
+
+.footer_menu li a{
+    text-decoration: none;/*retira o sublinhado padrão dos links*/
+    color:black;
+    font-family:"futura-pt", sans-serif;/* fonte a ser usada*/
+    font-weight:400;/* 300 em princípio é valor normal*/
+    font-style:normal;
+    font-size:1em;
+    /*border:1px solid black;*/
+    margin-right:3vw;
+    margin-left:3vw;
+}
+.instagram-logo-link{
+    /*definir largura e altura da imagem*/
+    /*border:1px solid black;*/
+    margin-right:0.5vw;
+    margin-left:3vw;
+}
+
+.instagram-logo-link img{
+    /*definir largura e altura da imagem*/
+    /*border:1px solid black;*/
+    width: 50px;
+    height: 50px;
+}
+
+.facebook-logo-link{
+    /*definir largura e altura da imagem*/
+    /*border:1px solid black;*/
+    margin-right:0.5vw;
+    /*margin-left:3vw;*/
+}
+
+.facebook-logo-link img{
+    /*definir largura e altura da imagem*/
+    /*border:1px solid black;*/
+    width: 25px;
+    height: 25px;
+}
+
+.x-logo-link{
+    /*definir largura e altura da imagem*/
+    /*border:1px solid black;*/
+
+    width: 35px;
+    height: 35px;
+    margin-left:0.25vw;
+}
+
+.x-logo-link img{
+    /*definir largura e altura da imagem*/
+    /*border:1px solid black;*/
+    width: 35px;
+    height: 35px;
+}
+
+.footer_menu li a:hover{
+    color:#78400f;
+}
