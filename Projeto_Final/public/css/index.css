@@ -17,6 +17,12 @@ body {
     line-height: 1.6;
     /* Garante que o body se estenda para telas pequenas, embora o footer resolva isso */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 /* ====================================
