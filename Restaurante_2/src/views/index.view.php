@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../../public/css/index.css">
-
 <main id="restaurantes">
     <div>
         <h1>Faça já a sua reserva</h1>

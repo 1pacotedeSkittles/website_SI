@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../public/css/header.css"> <!--chamar o header.css!-->
+
 
 <header class="navbar-container">
     <!-- navbar do website !-->
@@ -8,7 +8,7 @@
         </a>
 
         <ul class="nav-menu">
-            <li><a href="../pages/login.php">Login</a></li>
+            <li><a href="../public/login.php">Login</a></li>
             <li><a href="../pages/loginRegisto.php">Registar</a></li>
             <li><a href="../pages/contactos.php">Contactos</a></li>
         </ul>
