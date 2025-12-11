@@ -11,7 +11,5 @@
             <li><a href="../pages/contactos.php">Contactos</a></li>
         </ul>
 
-        <span id="abrirPainel" class="nome-cliente"><?= $cliente['nome'] ?></span>
-
     </nav>
 </header>
