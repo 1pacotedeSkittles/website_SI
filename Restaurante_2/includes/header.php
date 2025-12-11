@@ -1,5 +1,3 @@
-
-
 <header class="navbar-container">
     <!-- navbar do website !-->
     <nav class="nav">

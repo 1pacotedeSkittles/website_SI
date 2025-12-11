@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../public/css/footer.css"> <!--chamar o footer.css!-->
 
 <footer class="footer_container">
     <div class="footer_content">
