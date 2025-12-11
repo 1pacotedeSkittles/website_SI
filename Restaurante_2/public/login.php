@@ -1,13 +1,8 @@
 <?php
-
-// login.php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
-// ...
 
-$title = 'eateasy';
+$title='EATEASY';
+// login.php
 $content = '../src/views/login.view.php';
-require '../includes/master.php';
+// ...
+require '../includes/master.php'; // Isto executa require $content;
