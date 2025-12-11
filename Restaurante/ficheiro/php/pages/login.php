@@ -46,9 +46,5 @@ session_start();
     </div>
 </main>
 
-<footer class="login-para-admin">
-    <a href="loginAdmin.php" class="login-admin">Administrador</a>
-</footer>
-
 </body>
 </html>

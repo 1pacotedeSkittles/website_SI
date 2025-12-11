@@ -24,7 +24,7 @@
 
         <article>
             <div>
-                <img src="/fotos/foto.webp" height="800" width="600" alt="foto1"/>
+                <img src="R1/interior.jpg"/>
             </div>
             <div>
                 <h3>Restaurante 1</h3>
