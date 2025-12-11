@@ -28,8 +28,8 @@ session_start();
                 <div class="msg-error"><?php echo $_SESSION['login_erro']; unset($_SESSION['login_erro']); ?></div>
             <?php endif; ?>
 
-            <form class="auth-form" action="../action/processa.login.php" method="POST">
-                <input class="input-field" type="email" name="email" placeholder="Email" required>
+            <form action="../src/controllers/logincontroller.php" method="POST" class="login-form">
+                <input class="input-field" type="email" name="email" placeholder="email" required>
                 <input class="input-field" type="password" name="password" placeholder="Palavra-Passe" required>
 
                 <div class="aux-links">
