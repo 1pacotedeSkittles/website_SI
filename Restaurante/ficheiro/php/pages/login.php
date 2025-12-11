@@ -15,9 +15,7 @@ session_start();
 </head>
 <body>
 
-<header>
-    <?php include '../includes/navbar.php'; ?>
-</header>
+<?php include '../includes/navbar.php'; ?>
 
 <main>
     <div class="auth-container">
