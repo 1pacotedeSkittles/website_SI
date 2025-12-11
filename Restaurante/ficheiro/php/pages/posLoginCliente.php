@@ -24,7 +24,7 @@ $reservas = $sql2->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eatEasy - Cliente</title>
-    <link rel="stylesheet" href="cliente_home.css">
+    <link rel="stylesheet" href="../../css/posLoginCliente.css">
 </head>
 
 <body>
@@ -84,7 +84,7 @@ $reservas = $sql2->get_result();
     <p class="copyright">© 2025 eatEasy<br>Todos os direitos reservados</p>
 </aside>
 
-<script src="cliente_home.js"></script>
+<script src="../../JS/posLoginCliente.js"></script>
 
 </body>
 </html>

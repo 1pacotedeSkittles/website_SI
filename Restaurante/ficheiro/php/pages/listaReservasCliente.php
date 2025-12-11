@@ -21,7 +21,7 @@
         <div id="cartoes-reservas">
 
             <article>
-                <img src="imagens/reserva_restaurante1.jpg" alt="Foto Restaurante 1" width="250" height="180">
+                <img src="../imagens/reserva_restaurante1.jpg" alt="Foto Restaurante 1" width="250" height="180">
                 <div>
                     <h3>Nome restaurante</h3>
                     <ul>
