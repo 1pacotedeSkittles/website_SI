@@ -1,4 +1,5 @@
 <?php
+define('BASE_URL', '/Restaurante_2/public/');
 $title = 'eateasy';
 $content = '../src/views/index.view.php';
 require '../includes/master.php';
