@@ -1,0 +1,51 @@
+
+:root {
+    /* Cores */
+    --color-primary: #000000;      /* Preto (Texto principal, Navbar, Header) */
+    --color-secondary: #333333;    /* Cinza Escuro (Corpo de texto) */
+    --color-background: #ffffff;   /* Branco (Fundo de Navbar, Cartões) */
+    --color-light-bg: #f8f8f8;     /* Cinza Claro (Fundo principal do body) */
+    --color-accent: #ff6347;       /* Cor de destaque (Ações, Hover - Tomato) */
+
+    /* Tipografia */
+    --font-family-base: 'Arial', sans-serif;
+    --font-family-heading: 'Georgia', serif;
+    --font-size-base: 16px;
+
+    --spacing-default: 20px;
+}
+
+
+body {
+    font-family: var(--font-family-base),sans-serif;
+    font-size: var(--font-size-base);
+    color: var(--color-secondary);
+
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-light-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-heading),sans-serif;
+    color: var(--color-primary);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.3em; }
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-accent);
+}

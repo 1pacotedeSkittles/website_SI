@@ -45,7 +45,7 @@ $nome_admin = $_SESSION['user_nome'];
 
     <p>
         <a href="adicionar_restaurante.php">Adicionar Novo Restaurante</a> |
-        <a href="listar_reservas.php">Ver Reservas para Meus Restaurantes</a>
+        <a href="lista_reservas.php">Ver Reservas para Meus Restaurantes</a>
     </p>
 
     <hr>
