@@ -73,7 +73,7 @@ $sql_restaurantes_info = "
                     echo '        <p>Tipo comida: ' . htmlspecialchars($tipos_cozinha_str) . '</p>';
                     echo '        <p>Preço médio por prato: <span>' . htmlspecialchars($restaurante['preco_medio']) . '€</span></p>';
                     // O link de reserva redireciona para a página de login
-                    echo '        <a href="php/cliente/login.php" class="btn-reservar">Reservar (Faça Login)</a>';
+                    echo '        <a href="../php/login.php" class="btn-reservar">Reservar (Faça Login)</a>';
                     echo '    </div>';
                     echo '</div>';
                 }
