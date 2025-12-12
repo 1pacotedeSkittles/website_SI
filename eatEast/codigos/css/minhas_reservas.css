@@ -1,0 +1,123 @@
+
+/* Contêiner de Listagem Geral */
+.reservas-listagem,
+.restaurantes-gestao-list {
+    margin-top: 20px;
+    padding: 0;
+}
+
+/* ------------------------------------------------- */
+/* ESTILOS PARA ITENS DE RESERVA (Cliente & Admin) */
+/* ------------------------------------------------- */
+
+.reserva-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--color-background);
+
+    /* Layout para alinhar os detalhes e o status (ou botões) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.reserva-item p {
+    margin: 4px 0;
+}
+
+/* Cores e Bordas para Status das Reservas */
+.status-Pendente {
+    background-color: #fff3cd; /* Amarelo claro */
+    border-left: 5px solid #ffc107; /* Laranja */
+    color: #856404; /* Laranja escuro */
+}
+
+.status-Confirmada {
+    background-color: #d4edda; /* Verde claro */
+    border-left: 5px solid #28a745; /* Verde */
+    color: #155724; /* Verde escuro */
+}
+
+.status-Cancelada {
+    background-color: #f8d7da; /* Vermelho claro */
+    border-left: 5px solid #dc3545; /* Vermelho */
+    color: #721c24; /* Vermelho escuro */
+}
+
+/* Estilo para Reservas Passadas / Histórico (Neutro) */
+.reserva-historico {
+    background-color: #f0f0f0;
+    border-left: 5px solid #6c757d; /* Cinza */
+    opacity: 0.8;
+}
+
+/* Botões de Ação na Lista de Reservas do Admin */
+.reserva-actions a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid;
+}
+
+/* ------------------------------------------------- */
+/* ESTILOS PARA LISTAGEM DE RESTAURANTES DO ADMIN */
+/* ------------------------------------------------- */
+
+.restaurantes-gestao-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.restaurante-item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--color-background);
+    /* Borda lateral para dar um toque de design */
+    border-left: 4px solid var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.restaurante-item strong {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+/* Estilo para os links de Ação (Atualizar, Remover) */
+.restaurante-item .actions {
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px dashed #eee;
+}
+
+.restaurante-item .actions a {
+    margin-right: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Botões de Ação na Pagina Inicial Admin */
+.admin-actions a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    background-color: var(--color-light-bg);
+    border: 1px solid var(--color-secondary);
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.admin-actions a:hover {
+    background-color: #e9ecef;
+    color: var(--color-primary);
+}

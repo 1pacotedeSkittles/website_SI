@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// 1. Lógica de Proteção de Página
+// Lógica de Proteção de Página
 if (!isset($_SESSION['logged_in']) || $_SESSION['user_type'] !== 'cliente') {
     $_SESSION['login_error'] = "Acesso restrito. Faça login primeiro.";
     header("Location: login.php");
@@ -9,14 +9,13 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['user_type'] !== 'cliente') {
 }
 
 // Inclui a conexão à base de dados
-// Garanta que o caminho para o ficheiro db-connect.php está correto.
 require '../DataBase/db-connect.php';
 
 // Dados do cliente logado
 $id_cliente = $_SESSION['user_id'];
 $nome_cliente = $_SESSION['user_nome'];
 
-// 2. Consulta Otimizada: Buscar todos os restaurantes e os seus tipos de cozinha
+// Consulta SQL para obter os dados de listagem
 $sql_restaurantes_info = "
     SELECT 
         r.id_restaurante, 
@@ -37,28 +36,37 @@ $sql_restaurantes_info = "
 <head>
     <meta charset="UTF-8">
     <title>Página Inicial - eatEasy</title>
+    <link rel="stylesheet" href="../css/tipografia.css">
+    <link rel="stylesheet" href="../css/nav_footer.css">
+    <link rel="stylesheet" href="../css/pag_inicial_cliente.css">
 </head>
 <body>
+
 <header>
-    <h1>eatEasy</h1>
+    <a href="pag_inicial_cliente.php" class="logo">eatEasy</a>
 
-    <form action="pesquisar_restaurante.php" method="GET">
-        <input type="search" name="query" placeholder="Pesquisar por nome ou tipo de cozinha..." required>
-        <button type="submit">🔍</button>
-    </form>
+    <div class="nav-area">
+        <div class="search-bar">
+            <form action="pesquisar_restaurante.php" method="GET">
+                <input type="search" name="query" placeholder="Pesquisar por nome ou tipo de cozinha..." required>
+                <button type="submit">🔍</button>
+            </form>
+        </div>
 
-    <div style="float: right;">
-        <span>Nome Cliente: **<?php echo htmlspecialchars($nome_cliente); ?>**</span>
-        <a href="logout.php">Sair (Logout)</a> |
-        <a href="minhas_reservas.php">As minhas reservas</a>
+        <div class="nav-links user-profile">
+            <span style="font-size: 20px;">👤</span>
+            <span>Cliente: <strong><?php echo htmlspecialchars($nome_cliente); ?></strong></span>
+
+            <a href="minhas_reservas.php">As minhas reservas</a>
+            <a href="logout.php">Sair (Logout)</a>
+        </div>
     </div>
-    <div style="clear: both;"></div>
 </header>
 
 <main>
     <h2>Faça já a sua reserva</h2>
 
-    <div class="restaurantes-listagem">
+    <div class="restaurantes-grid">
 
         <?php
         try {
@@ -68,17 +76,18 @@ $sql_restaurantes_info = "
             if (count($restaurantes) > 0) {
                 foreach ($restaurantes as $restaurante) {
 
-                    // Garante que o tipo de cozinha é exibido corretamente (pode ser NULL se não tiver)
                     $tipos_cozinha_str = $restaurante['tipos_cozinha'] ?? 'N/A';
 
-                    // Apresentação do Cartão do Restaurante (Baseado no mockup)
-                    echo '<div class="restaurante-card" style="border: 1px solid #ccc; padding: 10px; margin: 10px; display: inline-block; width: 250px;">';
-                    echo '    <div class="foto" style="width: 100%; height: 150px; background-color: #eee; text-align: center; line-height: 150px;">[foto]</div>';
-                    echo '    <h4>' . htmlspecialchars($restaurante['nome']) . '</h4>';
-                    echo '    <p>Localização: ' . htmlspecialchars($restaurante['local_morada']) . '</p>';
-                    echo '    <p>Tipo comida: ' . htmlspecialchars($tipos_cozinha_str) . '</p>';
-                    echo '    <p>Preço médio por prato: ' . htmlspecialchars($restaurante['preco_medio']) . '€</p>';
-                    echo '    <a href="fazer_reserva.php?id=' . $restaurante['id_restaurante'] . '">Reservar</a>';
+                    // ESTRUTURA DO CARTÃO DE RESTAURANTE
+                    echo '<div class="restaurante-card">';
+                    echo '    <div class="foto-placeholder">Foto</div>';
+                    echo '    <div class="card-details">';
+                    echo '        <h3>' . htmlspecialchars($restaurante['nome']) . '</h3>';
+                    echo '        <p>Localização: ' . htmlspecialchars($restaurante['local_morada']) . '</p>';
+                    echo '        <p>Tipo comida: ' . htmlspecialchars($tipos_cozinha_str) . '</p>';
+                    echo '        <p>Preço médio por prato: <span>' . htmlspecialchars($restaurante['preco_medio']) . '€</span></p>';
+                    echo '        <a href="fazer_reserva.php?id=' . $restaurante['id_restaurante'] . '" class="btn-reservar">Reservar</a>';
+                    echo '    </div>';
                     echo '</div>';
                 }
             } else {
@@ -92,7 +101,13 @@ $sql_restaurantes_info = "
 </main>
 
 <footer>
-    <p>&copy; 2025 eatEasy. Todos os direitos reservados.</p>
+    <div class="footer-content">
+        <p>&copy; 2025 eatEasy. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Sobre Nós</a>
+            <a href="#">Termos de Utilização</a>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

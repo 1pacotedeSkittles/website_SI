@@ -1,0 +1,28 @@
+
+/* Regras para os inputs de Data/Hora/Número */
+.auth-form input[type="date"],
+.auth-form input[type="time"],
+.auth-form input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Garante que o texto de data/hora fica legível */
+    font-family: var(--font-family-base),sans-serif;
+    font-size: 1em;
+}
+
+/* Alinhar melhor as labels para formulários mais longos */
+.reserva-form label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+/* O resto da estilização do formulário (background, botões, centralização)
+   continua a ser gerido por forms.css */

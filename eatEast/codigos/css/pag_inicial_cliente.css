@@ -1,0 +1,78 @@
+
+.restaurantes-grid {
+    display: grid;
+    /* 4 colunas de tamanho igual com espaçamento de 30px */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: var(--spacing-default);
+}
+
+/* Cartão Individual */
+.restaurante-card {
+    background-color: var(--color-background); /* Fundo branco */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden; /* Garante que nada sai das bordas */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    transition: transform 0.2s;
+}
+
+.restaurante-card:hover {
+    transform: translateY(-5px); /* Efeito ligeiro ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Espaço da Foto (Mockup) */
+.foto-placeholder {
+    width: 100%;
+    height: 180px;
+    background-color: var(--color-light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-secondary);
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Detalhes do Cartão */
+.card-details {
+    padding: 15px;
+    flex-grow: 1; /* Ocupa o restante espaço vertical */
+}
+
+.card-details h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: var(--color-primary);
+}
+
+.card-details p {
+    margin: 4px 0;
+    font-size: 0.9em;
+}
+
+.card-details span {
+    font-weight: bold; /* Destaca o preço */
+    color: var(--color-accent);
+}
+
+/* Botão de Reservar (Requisito: Destaque) */
+.btn-reservar {
+    display: block;
+    text-align: center;
+    background-color: var(--color-primary); /* Fundo preto */
+    color: var(--color-background) !important; /* Texto branco */
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: var(--color-secondary); /* Efeito de hover */
+}

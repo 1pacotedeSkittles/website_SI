@@ -1,0 +1,101 @@
+/* ================================================= */
+/* 2. NAVBAR (Cabeçalho) */
+/* ================================================= */
+
+header {
+    background-color: var(--color-background); /* Branco */
+    border-bottom: 1px solid #ddd;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between; /* Logo de um lado, navegação do outro */
+    align-items: center;
+}
+
+main {
+    flex: 1;
+    /* Aumentar padding lateral de 50px para 80px */
+    padding: 20px 80px;
+    max-width: 1400px; /* Aumentar o limite máximo de largura */
+    width: 100%;
+    margin: 0 auto; /* CRUCIAL: Centraliza o bloco 'main' */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600; /* Um pouco de destaque */
+    color: var(--color-primary); /* Preto */
+}
+
+.nav-area {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Pesquisa (Mockup: linha simples e discreta) */
+.search-bar form {
+    /* Mantém a linha simples e discreta */
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-secondary);
+    border-radius: 4px; /* Cantos ligeiramente arredondados */
+    overflow: hidden;
+}
+
+.search-bar input[type="search"] {
+    border: none;
+    padding: 8px 15px;
+    outline: none;
+    width: 250px;
+}
+
+.search-bar button {
+    background-color: transparent; /* Fundo transparente */
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--color-secondary);
+}
+
+/* Informação e Links do Utilizador Logado */
+.nav-links.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os elementos de perfil */
+    font-size: 0.9em;
+}
+
+.nav-links.user-profile strong {
+    color: var(--color-primary);
+}
+
+/* Os links (As minhas reservas, Sair) usam o estilo 'a' geral. */
+
+/* ================================================= */
+/* 3. FOOTER (Rodapé) */
+/* ================================================= */
+
+footer {
+    /*background-color: var(--color-primary);*/
+    color: var(--color-primary);
+
+    padding: 15px 80px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+}
+
+.footer-links a {
+    color: var(--color-primary);
+    margin: 0 10px;
+    text-decoration: none;
+}
