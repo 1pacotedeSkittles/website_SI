@@ -24,7 +24,7 @@
 
         <article>
             <div>
-                <img src="R1/interior.jpg"/>
+                <img src="../../../fotos/R1/interior.jpg" height="800" width="600" alt="foto1"/>
             </div>
             <div>
                 <h3>Restaurante 1</h3>
@@ -34,7 +34,7 @@
             </div>
 
             <div>
-                <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto2"/>
+                <img src="../../../fotos/R2/restaurante.jpg" height="800" width="600" alt="foto2"/>
             </div>
             <div>
                 <h3>Restaurante 2</h3>
@@ -44,7 +44,7 @@
             </div>
 
             <div>
-                <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto3"/>
+                <img src="../../../fotos/R3/InteriorSushi.jpg" height="800" width="600" alt="foto3"/>
             </div>
             <div>
                 <h3>Restaurante 3</h3>
@@ -54,7 +54,7 @@
             </div>
 
             <div>
-                <img src="../../../fotos/foto.webp" height="800" width="600" alt="foto4"/>
+                <img src="../../../fotos/R4/c2.jpg" height="800" width="600" alt="foto4"/>
             </div>
             <div>
                 <h3>Restaurante 4</h3>

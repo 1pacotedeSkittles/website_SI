@@ -52,36 +52,29 @@ body {
     gap: 30px 20px; /* Espaçamento vertical e horizontal */
 }
 
-/* O HTML usa 8 divs dentro do <article>: 4 para fotos e 4 para detalhes.
-   No wireframe, a foto e os detalhes formam um CARD.
-
-   A cada 2 divs no HTML (foto + detalhes), criamos 1 CARD visualmente. */
-
 /* Estilo para os divs de Imagem (1º, 3º, 5º, 7º filho) */
 #restaurantes article div:nth-child(odd) {
-    /* Cria a área de placeholder da foto */
+    /* Cria a área do cartão da foto */
     border: 1px solid #ddd;
     border-radius: 3px;
     overflow: hidden;
     background-color: #fff;
-    height: 180px; /* Altura do placeholder da foto */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 180px; /* Altura do cartão da foto */
+
+
     grid-column: span 1; /* Ocupa uma coluna do grid */
+
+    /* Novo: Usa position relative para centralizar a imagem dentro do container */
+    position: relative;
 }
 
-/* O texto "foto" no wireframe */
-#restaurantes article div:nth-child(odd)::before {
-    content: "foto";
-    font-size: 1.2em;
-    color: #ccc;
-    text-transform: uppercase;
-}
-
-/* Oculta as tags <img> placeholders para usar o texto "foto" do pseudo-elemento */
+/* NOVO: Exibe e Estiliza as tags <img> */
 #restaurantes article img {
-    display: none;
+    display: block; /* Agora exibimos a imagem */
+    width: 100%;
+    height: 100%;
+    /* Garante que a imagem cobre o espaço sem distorcer (cortando as bordas se necessário) */
+    object-fit: cover;
 }
 
 
