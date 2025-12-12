@@ -16,7 +16,7 @@ if (empty($id_restaurante)) {
     exit;
 }
 
-// 1. Carregar dados atuais do restaurante
+// Carregar dados atuais do restaurante
 try {
     $sql_data = "SELECT nome, local_morada, preco_medio, id_admin_proprietario FROM restaurante WHERE id_restaurante = :id";
     $stmt_data = $db->prepare($sql_data);
@@ -30,11 +30,11 @@ try {
         exit;
     }
 
-    // 2. Carregar todos os Tipos de Cozinha disponíveis
+    // Carregar todos os Tipos de Cozinha disponíveis
     $stmt_cozinhas = $db->query("SELECT id_tipo_cozinha, designacao FROM tipo_cozinha ORDER BY designacao");
     $tipos_cozinha_disponiveis = $stmt_cozinhas->fetchAll(PDO::FETCH_ASSOC);
 
-    // 3. Carregar os Tipos de Cozinha ATUAIS deste restaurante
+    // Carregar os Tipos de Cozinha ATUAIS deste restaurante
     $sql_current_types = "SELECT id_tipo_cozinha FROM restaurante_tipo_cozinha WHERE id_restaurante = :id";
     $stmt_current_types = $db->prepare($sql_current_types);
     $stmt_current_types->bindParam(':id', $id_restaurante, PDO::PARAM_INT);

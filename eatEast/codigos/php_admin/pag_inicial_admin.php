@@ -40,7 +40,7 @@ $nome_admin = $_SESSION['user_nome'];
     <h2>Painel de Administração</h2>
 
     <?php
-    // 1. Mensagens de sucesso ou erro (após Adicionar/Remover)
+    // Mensagens de sucesso ou erro (após Adicionar/Remover)
     if (isset($_SESSION['msg_admin'])) {
         $cor = str_contains($_SESSION['msg_admin'], 'sucesso') ? 'green' : 'red';
         echo '<p style="color: ' . $cor . '; font-weight: bold;">' . $_SESSION['msg_admin'] . '</p>';

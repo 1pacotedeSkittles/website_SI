@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Proteção de Página e método
+// Proteção de Página
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['user_type'] !== 'admin' || $_SERVER["REQUEST_METHOD"] !== "GET") {
     header("Location: login_admin.php");
     exit;
@@ -18,7 +18,7 @@ if (empty($id_restaurante)) {
 }
 
 try {
-    // 1. Verificar se o restaurante pertence a este Admin
+    // Verificar se o restaurante pertence a este Admin
     $sql_check = "SELECT id_admin_proprietario, nome FROM restaurante WHERE id_restaurante = :id";
     $stmt_check = $db->prepare($sql_check);
     $stmt_check->bindParam(':id', $id_restaurante, PDO::PARAM_INT);
@@ -34,7 +34,7 @@ try {
     // Inicia a transação
     $db->beginTransaction();
 
-    // 2. Remover todas as reservas e ligações (M:M) antes de remover o restaurante principal
+    // Remover todas as reservas e ligações (M:M) antes de remover o restaurante principal
     // (Poderia usar CASCADE na DB, mas remover manualmente é mais seguro para logs/erros)
 
     // Remover Reservas associadas

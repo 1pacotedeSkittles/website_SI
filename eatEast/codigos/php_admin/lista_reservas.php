@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['user_type'] !== 'admin') 
     exit;
 }
 
-// CORREÇÃO DE PATH: Deve ser '../../' para chegar a /DataBase/
+
 require '../DataBase/db-connect.php';
 
 $id_admin = $_SESSION['user_id'];
@@ -13,9 +13,9 @@ $nome_admin = $_SESSION['user_nome'];
 $tempo_atual = date('Y-m-d H:i:s');
 $msg_erro = null;
 
-// ==========================================================
-// 1. Lógica para PROCESSAR STATUS (Confirmar/Cancelar) - POST
-// ==========================================================
+
+// PROCESSAR STATUS (Confirmar/Cancelar) - POST
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'], $_POST['id_reserva'])) {
     $id_reserva = filter_input(INPUT_POST, 'id_reserva', FILTER_VALIDATE_INT);
     $nova_status = ($_POST['action'] === 'confirmar') ? 'Confirmada' : 'Cancelada';
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'], $_POST['id_
 }
 // ==========================================================
 
-// 2. Consulta: Listar todas as Reservas para os restaurantes deste Admin
+// Consulta: Lista todas as Reservas para os restaurantes deste Admin
 $reservas = [];
 try {
     $sql_reservas = "

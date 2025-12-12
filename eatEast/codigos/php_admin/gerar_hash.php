@@ -1,5 +1,5 @@
 
-<!--//$password_admin = 'admin123'; // A password que você vai usar para fazer login-->
+<!--//$password_admin = 'admin123'; // A password usada para fazer login-->
 <!--//$hash_final = password_hash($password_admin, PASSWORD_DEFAULT);-->
 <!--//echo $hash_final;-->
 <!--//-->

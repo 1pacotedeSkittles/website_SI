@@ -1,7 +1,6 @@
 
 .restaurantes-grid {
     display: grid;
-    /* 4 colunas de tamanho igual com espaçamento de 30px */
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: var(--spacing-default);
@@ -9,18 +8,18 @@
 
 /* Cartão Individual */
 .restaurante-card {
-    background-color: var(--color-background); /* Fundo branco */
+    background-color: var(--color-background);
     border: 1px solid #ccc;
     border-radius: 4px;
     overflow: hidden; /* Garante que nada sai das bordas */
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s;
 }
 
 .restaurante-card:hover {
-    transform: translateY(-5px); /* Efeito ligeiro ao passar o mouse */
+    transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -56,7 +55,7 @@
 }
 
 .card-details span {
-    font-weight: bold; /* Destaca o preço */
+    font-weight: bold;
     color: var(--color-accent);
 }
 
@@ -64,8 +63,8 @@
 .btn-reservar {
     display: block;
     text-align: center;
-    background-color: var(--color-primary); /* Fundo preto */
-    color: var(--color-background) !important; /* Texto branco */
+    background-color: var(--color-primary);
+    color: var(--color-background) !important;
     padding: 10px 15px;
     margin-top: 15px;
     border-radius: 4px;
@@ -74,5 +73,5 @@
 }
 
 .btn-reservar:hover {
-    background-color: var(--color-secondary); /* Efeito de hover */
+    background-color: var(--color-secondary);
 }

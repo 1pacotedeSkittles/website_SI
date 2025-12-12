@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Proteção de Página e método
+// Proteção de Página
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['user_type'] !== 'admin' || $_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: login_admin.php");
     exit;
@@ -8,7 +8,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['user_type'] !== 'admin' |
 
 require '../DataBase/db-connect.php';
 
-// 1. Recolha dos dados
+// Recolha dos dados
 $id_admin = $_POST['id_admin'] ?? $_SESSION['user_id']; // Preferencialmente da sessão, se não vier do POST
 $nome = trim($_POST['nome'] ?? '');
 $local_morada = trim($_POST['local_morada'] ?? '');
@@ -36,11 +36,11 @@ try {
     $stmt_rest->bindParam(':id_admin', $id_admin, PDO::PARAM_INT);
     $stmt_rest->execute();
 
-    // 4. Obter o ID do restaurante recém-inserido (Crucial!)
+    // Obter o ID do restaurante recém-inserido (Crucial!)
     // Esta função é específica do PostgreSQL para obter o último ID da sequência
     $id_restaurante = $db->lastInsertId('restaurante_id_restaurante_seq');
 
-    // 5. Inserir as Ligações Tipo_Cozinha (Tabela M:M)
+    // Inserir as Ligações Tipo_Cozinha (Tabela M:M)
     if (!empty($tipos_cozinha) && $id_restaurante) {
         $sql_ligacao = "INSERT INTO restaurante_tipo_cozinha (id_restaurante, id_tipo_cozinha) 
                         VALUES (:id_restaurante, :id_tipo_cozinha)";
@@ -53,7 +53,7 @@ try {
         }
     }
 
-    // 6. Finalizar a Transação
+    //  Finalizar a Transação
     $db->commit();
     $_SESSION['msg_admin'] = "✅ Restaurante '$nome' registado com sucesso!";
 
@@ -63,6 +63,6 @@ try {
     $_SESSION['msg_admin'] = "❌ Erro ao registar restaurante: Falha na DB. " . $e->getMessage();
 }
 
-// 7. Redireciona para o Painel para ver o novo restaurante
+// Redireciona para o Painel para ver o novo restaurante
 header("Location: pag_inicial_admin.php");
 exit;

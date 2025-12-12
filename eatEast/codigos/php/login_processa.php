@@ -1,6 +1,6 @@
 <?php
 session_start();
-// O caminho deve ser "../DataBase/db-connect.php"
+
 require '../DataBase/db-connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email'] ?? '');
     $password_inserida = $_POST['password'] ?? '';
 
-    // 1. Prepara a Query para buscar o utilizador pelo email (UNIQUE)
+    // Prepara a Query para buscar o utilizador pelo email (UNIQUE)
     $sql = "SELECT id_cliente, nome, password_hash FROM cliente WHERE email = :email";
 
     try {
@@ -18,18 +18,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // 2. Verifica se o cliente existe E se a password está correta
+        // Verifica se o cliente existe E se a password está correta
         if ($cliente && password_verify($password_inserida, $cliente['password_hash'])) {
 
-            // Login com sucesso!
 
-            // 3. Cria variáveis de sessão
+            // Cria variáveis de sessão
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id'] = $cliente['id_cliente'];
             $_SESSION['user_nome'] = $cliente['nome']; // Requisito: nome deve aparecer
             $_SESSION['user_type'] = 'cliente';
 
-            // 4. Redireciona para a página pós-login
+            // Redireciona para a página pós-login
             header("Location: pag_inicial_cliente.php");
             exit;
 

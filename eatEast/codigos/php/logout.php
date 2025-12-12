@@ -10,4 +10,3 @@ session_destroy();
 // Redirecionar para a página inicial (pré-login)
 header("Location: login.php"); // Redireciona para o login ou index.php
 exit;
-?>

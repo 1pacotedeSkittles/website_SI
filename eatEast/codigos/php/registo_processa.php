@@ -5,23 +5,23 @@ require '../DataBase/db-connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Sanitização e recolha dos dados
+    // recolha dos dados
     $nome = trim($_POST['nome'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
     // $telemovel foi removido
 
-    // 2. Validação dos campos obrigatórios
+    //  Validação dos campos obrigatórios
     if (empty($nome) || empty($email) || empty($password)) {
         $_SESSION['registo_mensagem'] = "Todos os campos obrigatórios devem ser preenchidos.";
         header("Location: registo.php");
         exit;
     }
 
-    // 3. Hashing da Password
+    //  Hashing da Password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // 4. Prepara a Query de Inserção (APENAS 3 COLUNAS)
+    //  Prepara a Query de Inserção (APENAS 3 COLUNAS)
     $sql = "INSERT INTO cliente (nome, email, password_hash) 
             VALUES (:nome, :email, :password_hash)";
 
@@ -32,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password_hash', $hashed_password);
-        // O bind de :telemovel foi removido. Agora temos 3 binds para 3 placeholders.
 
-        // 5. Executa a query
+
+        // Executa a query
         $stmt->execute();
 
-        // 6. Sucesso: Redireciona para o login com uma mensagem
+        // Sucesso: Redireciona para o login com uma mensagem
         $_SESSION['registo_mensagem'] = "✅ Registo efetuado com sucesso! Pode agora fazer login.";
         header("Location: login.php");
         exit;

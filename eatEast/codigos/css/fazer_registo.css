@@ -9,12 +9,12 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    /* Garante que o texto de data/hora fica legível */
+
     font-family: var(--font-family-base),sans-serif;
     font-size: 1em;
 }
 
-/* Alinhar melhor as labels para formulários mais longos */
+
 .reserva-form label {
     display: block;
     text-align: left;
@@ -24,5 +24,3 @@
     margin-top: 10px;
 }
 
-/* O resto da estilização do formulário (background, botões, centralização)
-   continua a ser gerido por forms.css */

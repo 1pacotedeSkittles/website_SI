@@ -1,14 +1,11 @@
 
-/* Contêiner de Listagem Geral */
 .reservas-listagem,
 .restaurantes-gestao-list {
     margin-top: 20px;
     padding: 0;
 }
 
-/* ------------------------------------------------- */
-/* ESTILOS PARA ITENS DE RESERVA (Cliente & Admin) */
-/* ------------------------------------------------- */
+
 
 .reserva-item {
     border: 1px solid #ddd;
@@ -17,7 +14,6 @@
     margin-bottom: 10px;
     background-color: var(--color-background);
 
-    /* Layout para alinhar os detalhes e o status (ou botões) */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,29 +25,27 @@
     margin: 4px 0;
 }
 
-/* Cores e Bordas para Status das Reservas */
 .status-Pendente {
-    background-color: #fff3cd; /* Amarelo claro */
-    border-left: 5px solid #ffc107; /* Laranja */
-    color: #856404; /* Laranja escuro */
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+    color: #856404;
 }
 
 .status-Confirmada {
-    background-color: #d4edda; /* Verde claro */
-    border-left: 5px solid #28a745; /* Verde */
-    color: #155724; /* Verde escuro */
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+    color: #155724;
 }
 
 .status-Cancelada {
-    background-color: #f8d7da; /* Vermelho claro */
-    border-left: 5px solid #dc3545; /* Vermelho */
-    color: #721c24; /* Vermelho escuro */
+    background-color: #f8d7da;
+    border-left: 5px solid #dc3545;
+    color: #721c24;
 }
 
-/* Estilo para Reservas Passadas / Histórico (Neutro) */
 .reserva-historico {
     background-color: #f0f0f0;
-    border-left: 5px solid #6c757d; /* Cinza */
+    border-left: 5px solid #6c757d;
     opacity: 0.8;
 }
 
@@ -65,9 +59,8 @@
     border: 1px solid;
 }
 
-/* ------------------------------------------------- */
-/* ESTILOS PARA LISTAGEM DE RESTAURANTES DO ADMIN */
-/* ------------------------------------------------- */
+
+/* -----------------ADMIN ------------------ */
 
 .restaurantes-gestao-list ul {
     list-style: none;

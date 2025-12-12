@@ -1,29 +1,26 @@
-/* ================================================= */
-/* 2. NAVBAR (Cabeçalho) */
-/* ================================================= */
+
 
 header {
-    background-color: var(--color-background); /* Branco */
+    background-color: var(--color-background);
     border-bottom: 1px solid #ddd;
     padding: 15px 50px;
     display: flex;
-    justify-content: space-between; /* Logo de um lado, navegação do outro */
+    justify-content: space-between;
     align-items: center;
 }
 
 main {
     flex: 1;
-    /* Aumentar padding lateral de 50px para 80px */
     padding: 20px 80px;
-    max-width: 1400px; /* Aumentar o limite máximo de largura */
+    max-width: 1400px;
     width: 100%;
-    margin: 0 auto; /* CRUCIAL: Centraliza o bloco 'main' */
+    margin: 0 auto;
 }
 
 .logo {
     font-size: 24px;
-    font-weight: 600; /* Um pouco de destaque */
-    color: var(--color-primary); /* Preto */
+    font-weight: 600;
+    color: var(--color-primary);
 }
 
 .nav-area {
@@ -32,13 +29,11 @@ main {
     gap: 30px;
 }
 
-/* Pesquisa (Mockup: linha simples e discreta) */
 .search-bar form {
-    /* Mantém a linha simples e discreta */
     display: flex;
     align-items: center;
     border: 1px solid var(--color-secondary);
-    border-radius: 4px; /* Cantos ligeiramente arredondados */
+    border-radius: 4px;
     overflow: hidden;
 }
 
@@ -50,7 +45,7 @@ main {
 }
 
 .search-bar button {
-    background-color: transparent; /* Fundo transparente */
+    background-color: transparent;
     border: none;
     padding: 8px 12px;
     cursor: pointer;
@@ -58,11 +53,10 @@ main {
     color: var(--color-secondary);
 }
 
-/* Informação e Links do Utilizador Logado */
 .nav-links.user-profile {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espaçamento entre os elementos de perfil */
+    gap: 15px;
     font-size: 0.9em;
 }
 
@@ -70,14 +64,9 @@ main {
     color: var(--color-primary);
 }
 
-/* Os links (As minhas reservas, Sair) usam o estilo 'a' geral. */
 
-/* ================================================= */
-/* 3. FOOTER (Rodapé) */
-/* ================================================= */
 
 footer {
-    /*background-color: var(--color-primary);*/
     color: var(--color-primary);
 
     padding: 15px 80px;

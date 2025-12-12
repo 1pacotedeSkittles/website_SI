@@ -11,31 +11,31 @@ require '../DataBase/db-connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // 1. Recolha e limpeza dos dados
+    // Recolha e limpeza dos dados
     $id_cliente = $_POST['id_cliente'] ?? null;
     $id_restaurante = $_POST['id_restaurante'] ?? null;
     $data = $_POST['data'] ?? '';
     $hora = $_POST['hora'] ?? '';
     $num_pessoas = $_POST['pessoas'] ?? 0;
 
-    // 2. Validação básica
+    // Validação básica
     if (empty($id_restaurante) || empty($data) || empty($hora) || $num_pessoas <= 0) {
         $_SESSION['reserva_mensagem'] = "❌ Erro: Por favor, preencha todos os campos corretamente.";
         header("Location: fazer_reserva.php?id=$id_restaurante");
         exit;
     }
 
-    // 3. Combinação de data e hora para o formato TIMESTAMP do PostgreSQL
+    // Combinação de data e hora para o formato TIMESTAMP do PostgreSQL
     $data_hora_reserva = $data . ' ' . $hora;
 
-    // 4. Verificação de Data Futura
+    // Verificação de Data Futura
     if (strtotime($data_hora_reserva) < time()) {
         $_SESSION['reserva_mensagem'] = "❌ Erro: A data e hora da reserva devem ser futuras.";
         header("Location: fazer_reserva.php?id=$id_restaurante");
         exit;
     }
 
-    // 5. Query de Inserção (id_reserva e data_registo usam SERIAL/DEFAULT)
+    // Query de Inserção (id_reserva e data_registo usam SERIAL/DEFAULT)
     $sql = "INSERT INTO reserva (id_cliente, id_restaurante, data_hora_reserva, num_pessoas, status_reserva) 
             VALUES (:id_cliente, :id_restaurante, :data_hora, :num_pessoas, 'Pendente')"; // 'Pendente' é o default, mas é bom ser explícito
 

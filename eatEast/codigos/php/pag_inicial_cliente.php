@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Lógica de Proteção de Página
+//Proteção de Página
 if (!isset($_SESSION['logged_in']) || $_SESSION['user_type'] !== 'cliente') {
     $_SESSION['login_error'] = "Acesso restrito. Faça login primeiro.";
     header("Location: login.php");

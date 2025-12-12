@@ -1,6 +1,5 @@
 <?php
 session_start();
-// O caminho deve ser: Subir para /php/, depois subir para /eatEasyInc/, e finalmente descer para /DataBase/
 require '../DataBase/db-connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // 1. Verifica se o admin existe E 2. Se a password está correta
+        // Verifica se o admin existe E Se a password está correta
         if ($admin && password_verify($password_inserida, $admin['password_hash'])) {
 
             // Login com sucesso!
